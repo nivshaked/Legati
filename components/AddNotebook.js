@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from './Button.js';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Header from './components/Header';
 
 
 import {
@@ -17,7 +18,7 @@ import {
 } from 'react-native';
 
 
-export default class SignUp2 extends Component { 
+export default class AddNotebook extends Component { 
 
 	constructor(){
 		super()
@@ -26,9 +27,8 @@ export default class SignUp2 extends Component {
 
   render() {
   	return(
-  			<KeyboardAvoidingView  style={{ alignItems: 'center'}}>
-  	   			<Image source={require('../images/legatiLogo.png')} style= {{width:250, height:130, marginTop: 30}}/>
-	
+  			<Header/>
+  			<KeyboardAvoidingView  style={{ alignItems: 'center'}}>	
   				<View style= {styles.container}>
   				<Text style={{flex:4, fontSize: 17}}> I am playing the: </Text>
   					<Picker style={{flex:4, height:25}}
@@ -51,7 +51,7 @@ export default class SignUp2 extends Component {
   					<Picker.Item label="Trumpet" value="Trumpet" />
 					</Picker>
   				</View>
-  				
+
   				<View style= {styles.container}>
   				<Text style={{flex:4, fontSize: 17}}> for: </Text>
   					<Picker style={{flex:4, height:25}}

@@ -29,13 +29,14 @@ export default class SignUp extends Component {
   		
   			<ScrollView  contentContainerStyle={{ alignItems: 'center'}}>
   	   			<Image source={require('../images/legatiLogo.png')} style= {{width:250, height:130, marginTop: 30}}/>
-  				<TextInput style={{height: 50, width:300}} placeholder="First Name" />
-  				<TextInput style={{height: 50, width:300}} placeholder="Last Name" />
-  				<TextInput secureTextEntry={true} style={{height: 50, width:300}} placeholder="Password" />
-  				<TextInput secureTextEntry={true} style={{height: 50, width:300}} placeholder="Verify Password" />
-  				<TextInput style={{height: 50, width:300}} keyboardType= 'email-address' placeholder="Email address" />
+  				<TextInput style={styles.textInput} placeholder="First Name" />
+          <Text></Text>
+  				<TextInput style={styles.textInput} placeholder="Last Name" />
+  				<TextInput secureTextEntry={true} style={styles.textInput} placeholder="Password" />
+  				<TextInput secureTextEntry={true} style={styles.textInput} placeholder="Verify Password" />
+  				<TextInput style={styles.textInput} keyboardType= 'email-address' placeholder="Email address" />
   				
-  				<View style= {{flex:1, flexDirection : 'row', width:300, height: 60, marginTop:5}}>
+  				<View style= {styles.userType}>
   					<Text style={{flex:1, fontSize: 17}}> I am a: </Text>
   					<Picker style={{flex:4, height:25}}
   					selectedValue={this.state.language}
@@ -54,3 +55,17 @@ export default class SignUp extends Component {
   	)
   }
 }
+
+const styles = StyleSheet.create({
+  textInput: {
+    height: 50,
+    width:300
+  },
+  userType: {
+    flex:1,
+    flexDirection : 'row',
+    width:300,
+    height: 60,
+    marginTop:5
+  }
+});

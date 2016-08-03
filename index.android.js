@@ -3,10 +3,11 @@ import Button from 'react-native-button';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import SignUp from './components/SignUp';
 import Header from './components/Header';
-import DownMenu from './components/DownMenu';
-import HomeNootebooks from './components/HomeNootebooks';
+import Footer from './components/Footer';
+import HomeNotebooks from './components/HomeNotebooks';
 import SignUp2 from './components/SignUp2';
 import Home from './components/Home';
+import AddNotebook from './components/AddNotebook';
 
 import {
   AppRegistry,
@@ -29,7 +30,7 @@ class legati extends Component {
                     return Navigator.SceneConfigs.FloatFromRight;
       }}
       renderScene={(route, navigator) => {
-                    // count the number of func calls
+       // count the number of func calls
       console.log(route, navigator); 
       if (route.name == 'SignUp') { 
         return <SignUp navigator={navigator}/>  
@@ -46,4 +47,4 @@ class legati extends Component {
 
 
 
-AppRegistry.registerComponent('legati', () => legati);
+AppRegistry.registerComponent('legati', () => AddNotebook);

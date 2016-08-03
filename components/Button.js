@@ -10,8 +10,8 @@ import {
 const Button = ({onPress, children}) => {
 	return (
 			<TouchableNativeFeedback onPress={onPress} >
-  				<View style={{borderRadius : 13, backgroundColor: '#179fda', marginBottom: 20, width : 150, height:40, alignItems: 'center', justifyContent : 'center'}}>
-  					<Text style={{fontSize: 20, color : 'white'}}>
+  				<View style={{borderRadius : 13,  backgroundColor: '#179fda', marginBottom: 20,width : 150, height:40, alignItems: 'center', justifyContent : 'center'}}>
+  					<Text style={{fontSize: 18, color : 'white'}}>
   						{children}
   					</Text>
   				</View>

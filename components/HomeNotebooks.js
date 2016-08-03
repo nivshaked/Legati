@@ -10,7 +10,7 @@ import {
   View
 } from 'react-native';
 
-export default class HomeNootebooks extends Component {
+export default class HomeNotebooks extends Component {
   render() {
   	return(
 		    <View style={{flex : 1, flexDirection : 'row', flexWrap : 'wrap'}}>

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import Header from './Header';
-import DownMenu from './DownMenu';
-import HomeNootebooks from './HomeNootebooks';
+import Footer from './Footer';
+import HomeNotebooks from './HomeNotebooks';
 
 import {
   StyleSheet,
@@ -16,8 +16,8 @@ export default class Home extends Component {
     return (
       <View style={{backgroundColor: "white", flex: 1}}>
         <Header/>
-        <HomeNootebooks/>
-        <DownMenu/>
+        <HomeNotebooks/>
+        <Footer/>
       </View>
       )
   }

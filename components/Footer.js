@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from 'react-native-button';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {
@@ -9,20 +8,20 @@ import {
   View
 } from 'react-native';
 
-export default class DownMenu extends Component {
+export default class Footer extends Component {
   render() {
   	return(
-		    <View style= {styles.downBanner}>
-            <View style={styles.downBannerIcons}>
+		    <View style= {styles.footer}>
+            <View style={styles.footerIcons}>
               <Icon name="videocam" size={27} color="#676767"/>
             </View>
-            <View style={styles.downBannerIcons}>
+            <View style={styles.footerIcons}>
               <Icon name="mic" size={27} color="#676767"/>
              </View>        
-             <View style={styles.downBannerIcons}>
+             <View style={styles.footerIcons}>
               <Icon name="subject" size={27} color="#676767" /> 
             </View>
-            <View style={styles.downBannerIcons}>  
+            <View style={styles.footerIcons}>  
               <Icon name="attach-file" size={24} color="#676767" />
             </View>  
        </View> 
@@ -31,7 +30,7 @@ export default class DownMenu extends Component {
 }
 
 const styles = StyleSheet.create({
-  downBanner: {
+  footer: {
     position: 'absolute',
     left: 0,
     right: 0,
@@ -44,7 +43,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height:40
   },
-  downBannerIcons: {
+  footerIcons: {
   flex :1, 
   height:40,  
   alignItems: 'center',
