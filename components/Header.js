@@ -9,22 +9,20 @@ import {
   View
 } from 'react-native';
 
-export default class Header extends Component {
-  render() {
+const Header = ({children}) => {
   	return(
 		    <View style={styles.headBannerView}>    
             <Icon style={{marginLeft:10}} name="menu" size={27} color="white"/>
-            <Text style={styles.titleText}> Home </Text>
+            <Text style={styles.titleText}> {children} </Text>
         </View>
-  	)
-  }
-}
+  	);
+  };
 
 const styles = StyleSheet.create({
   titleText: {
     marginLeft: 10,
     fontFamily: 'sans-serif',
-    fontSize: 22,
+    fontSize: 20,
     color: 'white'
   },
   headBannerView: {
@@ -34,3 +32,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#179fda"
   }
 });
+
+
+export default Header;

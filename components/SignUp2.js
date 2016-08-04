@@ -27,7 +27,7 @@ export default class SignUp2 extends Component {
   render() {
   	return(
   			<KeyboardAvoidingView  style={{ alignItems: 'center'}}>
-  	   			<Image source={require('../images/legatiLogo.png')} style= {{width:250, height:130, marginTop: 30}}/>
+  	   			<Image source={require('../images/legatiLogo.png')} style= {{width:275, height:143, marginTop: 30}}/>
 	
   				<View style= {styles.container}>
   				<Text style={{flex:4, fontSize: 17}}> I am playing the: </Text>

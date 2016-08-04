@@ -27,15 +27,18 @@ export default class SignUp extends Component {
   render() {
   	return(
   		
-  			<ScrollView  contentContainerStyle={{ alignItems: 'center'}}>
-  	   			<Image source={require('../images/legatiLogo.png')} style= {{width:250, height:130, marginTop: 30}}/>
+  			<ScrollView contentContainerStyle={{alignItems: 'center'}}>
+        <View style= {{flexDirection:'row', position: 'absolute'}}>
+          <View style={{height:25, backgroundColor:"#179fda", flex:1, alignItems: 'center', justifyContent : 'center'}}>
+            <Text style={{color:'white',fontSize:15}}> something went wrong </Text>
+          </View>
+        </View>
+  	   			<Image source={require('../images/legatiLogo.png')} style= {{width:210, height:120, marginTop: 30}}/>
   				<TextInput style={styles.textInput} placeholder="First Name" />
-          <Text></Text>
-  				<TextInput style={styles.textInput} placeholder="Last Name" />
+          <TextInput style={styles.textInput} placeholder="Last Name" />
   				<TextInput secureTextEntry={true} style={styles.textInput} placeholder="Password" />
   				<TextInput secureTextEntry={true} style={styles.textInput} placeholder="Verify Password" />
   				<TextInput style={styles.textInput} keyboardType= 'email-address' placeholder="Email address" />
-  				
   				<View style= {styles.userType}>
   					<Text style={{flex:1, fontSize: 17}}> I am a: </Text>
   					<Picker style={{flex:4, height:25}}
@@ -49,7 +52,9 @@ export default class SignUp extends Component {
   				<Button onPress={() => this.props.navigator.push({ name: 'SignUp2', SignUp2})}>
   					Continue
   				</Button>
-  				
+          <View style={{marginTop:7}}>
+  				  <Text style={{textDecorationLine:'underline', color:'#003b59'}}> Already a member? </Text>
+          </View>
   			</ScrollView>
   		
   	)

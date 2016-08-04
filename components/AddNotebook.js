@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Button from './Button.js';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import Header from './components/Header';
+import Header from './Header';
 
 
 import {
@@ -27,49 +27,48 @@ export default class AddNotebook extends Component {
 
   render() {
   	return(
-  			<Header/>
-  			<KeyboardAvoidingView  style={{ alignItems: 'center'}}>	
+  		<View>
+  			<Header>
+  				Create notebook
+  			</Header>
+  			<KeyboardAvoidingView style={{ alignItems: 'center'}}>
+  				
   				<View style= {styles.container}>
-  				<Text style={{flex:4, fontSize: 17}}> I am playing the: </Text>
-  					<Picker style={{flex:4, height:25}}
-  					selectedValue={this.state.language}
-  					onValueChange={(lang) => this.setState({language: lang})}>
-  					<Picker.Item label="Guitar" value="Guitar" />
-  					<Picker.Item label="Piano" value="Piano" />
-  					<Picker.Item label="Voice" value="Voice" />
-  					<Picker.Item label="Violin" value="Violin" />
-  					<Picker.Item label="Trumpet" value="Trumpet" />
-					<Picker.Item label="Guitar" value="Guitar" />
-  					<Picker.Item label="Piano" value="Piano" />
-  					<Picker.Item label="Voice" value="Voice" />
-  					<Picker.Item label="Violin" value="Violin" />
-  					<Picker.Item label="Trumpet" value="Trumpet" />
-  					<Picker.Item label="Guitar" value="Guitar" />
-  					<Picker.Item label="Piano" value="Piano" />
-  					<Picker.Item label="Voice" value="Voice" />
-  					<Picker.Item label="Violin" value="Violin" />
-  					<Picker.Item label="Trumpet" value="Trumpet" />
-					</Picker>
+  				<TextInput style={styles.textInput} placeholder="Notebook name" />
   				</View>
 
   				<View style= {styles.container}>
-  				<Text style={{flex:4, fontSize: 17}}> for: </Text>
-  					<Picker style={{flex:4, height:25}}
+  					<Picker style={{flex:1, height:25}}
   					selectedValue={this.state.language}
   					onValueChange={(lang) => this.setState({language: lang})}>
-  					<Picker.Item label="0 - 1 years" value="0-1 years" />
+  					<Picker.Item label="Instrument" value="Instrument" />
+  					<Picker.Item label="1 - 3 years" value="1-3 years" />
+  					<Picker.Item label="3 - 7 years" value="3-7 years" />
+  					<Picker.Item label="7 + years" value="7+ years" />
+					</Picker>
+				
+  					<Picker style={{flex:1, height:25}}
+  					selectedValue={this.state.language}
+  					onValueChange={(lang) => this.setState({language: lang})}>
+  					<Picker.Item label="years learning" value="years learning" />
   					<Picker.Item label="1 - 3 years" value="1-3 years" />
   					<Picker.Item label="3 - 7 years" value="3-7 years" />
   					<Picker.Item label="7 + years" value="7+ years" />
 					</Picker>
   				</View>
-
+  		<TouchableNativeFeedback>
+  			<View style={{borderRadius : 10, borderWidth:5, borderColor: '#003b59', backgroundColor: '#179fda', width : 75, height:30, alignItems: 'center',justifyContent : 'center'}}>
+  				<Text style={{fontSize: 15, color : 'white'}}>
+  					Add
+  				</Text>
+  			</View>
+  		</TouchableNativeFeedback>
   				<Button onPress={() => console.log('hi')}>
-  					Sign up!
+  					Create
   				</Button>
   				
   			</KeyboardAvoidingView>
-  		
+  		</View>
   	)
   }
 }
@@ -81,5 +80,9 @@ const styles = StyleSheet.create({
     width:300,
     height: 60,
     marginTop:5
+  },
+  textInput: {
+    height: 50,
+    width:300
   }
 });
