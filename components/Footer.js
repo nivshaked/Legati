@@ -12,18 +12,19 @@ export default class Footer extends Component {
   render() {
   	return(
 		    <View style= {styles.footer}>
+            <View style={styles.footerIcons}>  
+              <Icon name="attach-file" size={24} color="#676767" />
+            </View> 
             <View style={styles.footerIcons}>
-              <Icon name="videocam" size={27} color="#676767"/>
+              <Icon name="videocam" size={28} color="#676767"/>
             </View>
             <View style={styles.footerIcons}>
               <Icon name="mic" size={27} color="#676767"/>
              </View>        
              <View style={styles.footerIcons}>
-              <Icon name="subject" size={27} color="#676767" /> 
+              <Icon name="subject" size={25} color="#676767" /> 
             </View>
-            <View style={styles.footerIcons}>  
-              <Icon name="attach-file" size={24} color="#676767" />
-            </View>  
+             
        </View> 
   	)
   }

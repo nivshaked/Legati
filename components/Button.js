@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  TextInput,
-  Picker,
   TouchableNativeFeedback,
   View
 } from 'react-native';

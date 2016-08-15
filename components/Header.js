@@ -9,10 +9,10 @@ import {
   View
 } from 'react-native';
 
-const Header = ({children}) => {
+const Header = ({children, icon}) => {
   	return(
 		    <View style={styles.headBannerView}>    
-            <Icon style={{marginLeft:10}} name="menu" size={27} color="white"/>
+            <Icon style={{marginLeft:16}} name={icon} size={27} color="white"/>
             <Text style={styles.titleText}> {children} </Text>
         </View>
   	);
@@ -20,9 +20,9 @@ const Header = ({children}) => {
 
 const styles = StyleSheet.create({
   titleText: {
-    marginLeft: 10,
+    marginLeft: 15,
     fontFamily: 'sans-serif',
-    fontSize: 20,
+    fontSize: 22,
     color: 'white'
   },
   headBannerView: {

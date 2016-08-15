@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Button from './Button.js';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import SignUp2 from './SignUp2';
+import SignUpStudent from './SignUpStudent';
 
 import {
   AppRegistry,
@@ -23,7 +23,6 @@ export default class SignUp extends Component {
 		super()
 		this.state= {language:""};
 	}
-
   render() {
   	return(
   		
@@ -49,7 +48,7 @@ export default class SignUp extends Component {
   					<Picker.Item label="Parent" value="Parent" />
 					</Picker>
   				</View>
-  				<Button onPress={() => this.props.navigator.push({ name: 'SignUp2', SignUp2})}>
+  				<Button onPress={() => this.props.navigator.push({ name: 'SignUpStudent', SignUpStudent})}>
   					Continue
   				</Button>
           <View style={{marginTop:7}}>

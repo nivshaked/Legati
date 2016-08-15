@@ -17,7 +17,7 @@ import {
 } from 'react-native';
 
 
-export default class SignUp2 extends Component { 
+export default class SignUpStudent extends Component { 
 
 	constructor(){
 		super()
@@ -26,8 +26,8 @@ export default class SignUp2 extends Component {
 
   render() {
   	return(
-  			<KeyboardAvoidingView  style={{ alignItems: 'center'}}>
-  	   			<Image source={require('../images/legatiLogo.png')} style= {{width:275, height:143, marginTop: 30}}/>
+  			<KeyboardAvoidingView  style={{alignItems: 'center'}}>
+  	   			<Image source={require('../images/legatiLogo.png')} style= {{width:210, height:120, marginTop: 30, marginBottom:30}}/>
 	
   				<View style= {styles.container}>
   				<Text style={{flex:4, fontSize: 17}}> I am playing the: </Text>
@@ -39,7 +39,7 @@ export default class SignUp2 extends Component {
   					<Picker.Item label="Voice" value="Voice" />
   					<Picker.Item label="Violin" value="Violin" />
   					<Picker.Item label="Trumpet" value="Trumpet" />
-					<Picker.Item label="Guitar" value="Guitar" />
+					  <Picker.Item label="Guitar" value="Guitar" />
   					<Picker.Item label="Piano" value="Piano" />
   					<Picker.Item label="Voice" value="Voice" />
   					<Picker.Item label="Violin" value="Violin" />
