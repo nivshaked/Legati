@@ -30,9 +30,9 @@ import {
 } from 'react-native';
 
 
-const store = configureStore();
+/*const store = configureStore();*/
 
-console.log(store.getState());
+const store = createStore(legatiApp);
 
 class legati extends Component {
 
