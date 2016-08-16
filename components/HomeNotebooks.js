@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     marginTop : 15, 
     marginLeft : 10,
     width:107,
-    height:78,
+    height:81,
     borderColor : '#179fda',
     borderWidth : 0.7
   }

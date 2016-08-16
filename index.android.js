@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import configureStore from './configureStore';
 import legatiApp from './reducers/index';
 import Button from 'react-native-button';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -29,9 +30,9 @@ import {
 } from 'react-native';
 
 
-let store = createStore(legatiApp);
+const store = configureStore();
 
-store.subscribe(() => {AppRegistry.registerComponent('legati', () => legati);});
+console.log(store.getState());
 
 class legati extends Component {
 
@@ -44,7 +45,7 @@ class legati extends Component {
                     return Navigator.SceneConfigs.FloatFromRight;
       }}
       renderScene={(route, navigator) => {
-       // count the number of func calls
+       
       console.log(route, navigator); 
       switch (route.name) { 
         case "HomeNotebooks":

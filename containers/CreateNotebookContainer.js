@@ -3,7 +3,8 @@ import CreateNotebook from '../components/CreateNotebook';
 
 const mapStateToProps = (state, ownProps) => { 
 	return {
-		notebooks: state.notebooks
+		notebooks: state.notebooks,
+		createNotebook : () => { ownProps.navigator.push({name : 'HomeNotebooks'})}
 
 	};
 };

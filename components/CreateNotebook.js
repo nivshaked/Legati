@@ -28,6 +28,7 @@ export default class CreateNotebook extends Component {
 		console.log(this);
 		console.log(this.props);
 		this.props.addNotebook(this.refs.nameInput._lastNativeText);
+    this.refs.nameInput.setNativeProps({text:""});
 	}
   render() {
   	return(
@@ -38,7 +39,7 @@ export default class CreateNotebook extends Component {
   			<KeyboardAvoidingView style={{alignItems: 'center', marginTop:10}}>
   				
   				<View style= {styles.container}>
-  					<TextInput ref="nameInput" style={styles.textInput} placeholder="Notebook name" />
+  					<TextInput ref="nameInput" style={styles.textInput}  placeholder="Notebook name" />
   				</View>
 
   				<View style= {styles.container}>
@@ -91,7 +92,7 @@ export default class CreateNotebook extends Component {
   				
 
   				<View style={{marginTop:200}}>
-  					<Button onPress={() => console.log('hi')}>
+  					<Button onPress={() => { this.props.createNotebook()}}>
   						Create
   					</Button>
   				</View>
