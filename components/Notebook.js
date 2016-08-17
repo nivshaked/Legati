@@ -10,6 +10,7 @@ import {
   ScrollView,
   Image,
   View,
+  WebView,
   Navigator
 } from 'react-native';
 
@@ -28,7 +29,7 @@ const Notebook = ({name}) => {
        			</Text>
        			 <Icon name="more-vert" size={23} color="black"/>
        		</View>
-       		{/*individual tasks view*/}
+       		{/*individual tasks text view*/}
        		<View style={styles.taskContainer}>
        			<View style={styles.textContainer}>
          			<Text style={styles.textNote}>
@@ -37,6 +38,11 @@ const Notebook = ({name}) => {
          			</Text>
        			</View>
        		</View>
+          {/*individual task video view*/}
+          <View style={styles.taskContainer}>
+            <WebView style={{height : 200, width:330, margin:15, borderWidth :1.3, backgroundColor: '#f8f8f8'}}source={{html : '<iframe width="320" height="180" src="https://www.youtube.com/embed/KVZ-P-ZI6W4?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'}}/>
+          </View>
+
        		<View style= {styles.taskContainer}>
        			<View style={styles.textContainer}>
               <Text style={styles.textTitle}> 
