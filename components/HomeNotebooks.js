@@ -16,8 +16,8 @@ import {
 const HomeNotebooks = ({notebooks, addNotebook, openNotebook}) => {
   	return(
 		  <View style={{flex : 1}}>
-        <Header icon="keyboard-arrow-left">
-          רון
+        <Header icon="menu">
+          Home
         </Header>
         <View style={{flex : 1, flexDirection : 'row', flexWrap : 'wrap'}}>
           {notebooks.map((notebook) => { 
