@@ -1,8 +1,8 @@
 
-jest.unmock('../reducers/notebooks.js');
+jest.unmock('../../reducers/notebooks.js');
 
-import notebooks from '../reducers/notebooks.js';
-import { addNotebook }  from '../actionCreators/notebookActions.js';
+import notebooks from '../../reducers/notebooks.js';
+import { addNotebook }  from '../../actionCreators/notebookActions.js';
 
 describe('actionCreator', () =>{
 	it('creates and object with name and id' , () => { 
