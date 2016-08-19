@@ -34,13 +34,16 @@ export default class CreateNotebook extends Component {
   	return(
   		<View>
   			<Header icon="keyboard-arrow-left">
-  				Create notebook
+  				Create Notebook
   			</Header>
   			<KeyboardAvoidingView style={{alignItems: 'center', marginTop:10}}>
   				
   				<View style= {styles.container}>
   					<TextInput ref="nameInput" style={styles.textInput}  placeholder="Notebook name" />
   				</View>
+          <View style= {{flex:1, flexDirection : 'row', width:300, height: 60, marginTop:-8}}>
+            <TextInput ref="nameInput" style={{flex:2.5, height:40}}  placeholder="Share with (Type an email address)" />
+          </View>
 
   				<View style= {styles.container}>
   					<Picker style={{flex:1, height:25}}
@@ -91,7 +94,7 @@ export default class CreateNotebook extends Component {
    		
   				
 
-  				<View style={{marginTop:200}}>
+  				<View style={{marginTop:150}}>
   					<Button onPress={() => { this.props.createNotebook()}}>
   						Create
   					</Button>
@@ -109,10 +112,10 @@ const styles = StyleSheet.create({
     flexDirection : 'row',
     width:300,
     height: 60,
-    marginTop:5
+    marginTop:7
   },
   textInput: {
-    height: 50,
+    height: 40,
     width:300
   }
 });

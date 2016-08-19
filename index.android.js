@@ -46,7 +46,6 @@ class legati extends Component {
       }}
       renderScene={(route, navigator) => {
        
-      console.log(route, navigator); 
       switch (route.name) { 
         case "HomeNotebooks":
           return <HomeNotebooksContainer navigator={navigator}/>  
@@ -56,6 +55,7 @@ class legati extends Component {
           return <CreateNotebookContainer navigator={navigator}/>    
          }}
        }
+       
       />
       </Provider>
       )
