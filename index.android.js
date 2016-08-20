@@ -68,4 +68,4 @@ class legati extends Component {
 
 
 
-AppRegistry.registerComponent('legati', () => Notebook);
+AppRegistry.registerComponent('legati', () => AddText);

@@ -12,7 +12,7 @@ import {
 const Header = ({children, icon}) => {
   	return(
 		    <View style={styles.headBannerView}>    
-            <Icon style={{marginLeft:16}} name={icon} size={27} color="white"/>
+            <Icon style={{marginRight:16}} name={icon} size={27} color="white"/>
             <Text style={styles.titleText}> {children} </Text>
         </View>
   	);
@@ -20,14 +20,14 @@ const Header = ({children, icon}) => {
 
 const styles = StyleSheet.create({
   titleText: {
-    marginLeft: 15,
+    marginRight: 15,
     fontFamily: 'sans-serif',
     fontSize: 22,
     color: 'white'
   },
   headBannerView: {
     height: 45,
-    flexDirection:'row',
+    flexDirection:'row-reverse',
     alignItems: 'center',
     backgroundColor: "#179fda"
   }
