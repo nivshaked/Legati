@@ -42,7 +42,7 @@ export default class CreateNotebook extends Component {
   					<TextInput ref="nameInput" style={styles.textInput}  placeholder="Notebook name" />
   				</View>
           <View style= {{flex:1, flexDirection : 'row', width:300, height: 60, marginTop:-8}}>
-            <TextInput ref="nameInput" style={{flex:2.5, height:40}}  placeholder="Share with (Type an email address)" />
+            <TextInput  style={{flex:2.5, height:40}}  placeholder="Share with (Type an email address)" />
           </View>
 
   				<View style= {styles.container}>

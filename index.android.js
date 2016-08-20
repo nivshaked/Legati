@@ -31,6 +31,9 @@ import {
 
 
 /*const store = configureStore();*/
+/*const apiMiddleware = ({dispatch, getState}) => next => action => { 
+  
+}*/
 
 const store = createStore(legatiApp);
 
@@ -55,7 +58,7 @@ class legati extends Component {
           return <CreateNotebookContainer navigator={navigator}/>    
          }}
        }
-       
+
       />
       </Provider>
       )
@@ -65,4 +68,4 @@ class legati extends Component {
 
 
 
-AppRegistry.registerComponent('legati', () => legati);
+AppRegistry.registerComponent('legati', () => Notebook);
