@@ -1,1 +1,3 @@
 export const ADD_NOTEBOOK = "ADD_NOTEBOOK";
+export const LOAD_STORAGE = "LOAD_STORAGE";
+export const DELETE_NOTEBOOK = "DELETE_NOTEBOOK";

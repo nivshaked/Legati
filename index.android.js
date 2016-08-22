@@ -19,6 +19,7 @@ import AddText from './components/AddText';
 import Notebook from './components/Notebook';
 
 
+
 import {
   AppRegistry,
   StyleSheet,
@@ -35,7 +36,8 @@ import {
   
 }*/
 
-const store = createStore(legatiApp);
+const store = configureStore();
+
 
 class legati extends Component {
 
@@ -45,7 +47,7 @@ class legati extends Component {
       <Navigator
       initialRoute = {{name : 'HomeNotebooks', HomeNotebooksContainer}}
       configureScene={() => {
-                    return Navigator.SceneConfigs.FloatFromRight;
+                    return Navigator.SceneConfigs.FadeAndroid;
       }}
       renderScene={(route, navigator) => {
        
@@ -68,4 +70,4 @@ class legati extends Component {
 
 
 
-AppRegistry.registerComponent('legati', () => AddText);
+AppRegistry.registerComponent('legati', () => legati);

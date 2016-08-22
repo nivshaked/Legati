@@ -1,27 +1,17 @@
 import { AsyncStorage } from 'react-native';
+import { loadStorage } from './actionCreators/asyncActions'
 
-export const loadState = () => { 
-		try { 
-			 AsyncStorage.getItem('state').then((data) => {
-			 	console.log(data);
-			 	/*if (data === null) { 
-					return undefined;
-				} */
-				console.log(data);
-				console.log(JSON.parse(data));
-				return JSON.parse(data);
-			 });
-			 
-		} catch (err) { 
-			console.log('error');
-			console.log(err);
-			return 1;
-		}
-
+export const loadState = (store) => { 
+		AsyncStorage.getItem('state').then((data) => {
+		const parsedData = JSON.parse(data);
+		console.log(parsedData);
+        store.dispatch(loadStorage(parsedData));
+       });
 };
 
 export const saveState = (state) => { 
 		try { 
+			console.log(state);
 			const serializedState = JSON.stringify(state);
 			console.log(serializedState);
 			AsyncStorage.setItem('state', serializedState);

@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Button from 'react-native-button';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Header from './Header';
@@ -13,17 +13,28 @@ import {
   View
 } from 'react-native';
 
-const HomeNotebooks = ({notebooks, addNotebook, openNotebook}) => {
-  	return(
+class HomeNotebooks extends Component {
+    constructor(props) { 
+        super(props);
+        this.state = {headerMode : 'header', selected : false };
+    }
+
+  	render() { 
+      return(
 		  <View style={{flex : 1}}>
-        <Header icon="menu">
+        <Header mode={this.state.headerMode} icon="menu">
           Home
         </Header>
         <View style={{flex : 1, flexDirection : 'row', flexWrap : 'wrap'}}>
-          {notebooks.map((notebook) => { 
+          {this.props.notebooks.map((notebook) => { 
             return ( 
-                <TouchableOpacity style={styles.notebook} activeOpacity={0.5} key={notebook.id} onPress={() => {openNotebook(notebook.id, notebook.name)}}>
-                <Image  source={require('../images/notebook.png')} style={{ width:107, height:78}}>
+                <TouchableOpacity style={styles.notebook} activeOpacity={0.5} key={notebook.id} onLongPress={() => {
+                  (this.state.selected === notebook.id) ?
+                   this.setState({headerMode : 'header' , selected : false}) :
+                   this.setState({headerMode : 'edit' , selected : notebook.id})}}
+                   onPress={() => {this.props.openNotebook(notebook.id, notebook.name)}}>
+                <Image  source={require('../images/notebook.png')} style={{width:107, height:78}}>
+                <Icon style={{position:'absolute',right:3.5, bottom:1, opacity : (this.state.selected === notebook.id) ? 1 : 0 }} name="check-circle" size={23} color="#4bd45b"/>
                   <View style={styles.backdropView}>
                     <Text style={styles.headline}>
                         {notebook.name}
@@ -34,7 +45,7 @@ const HomeNotebooks = ({notebooks, addNotebook, openNotebook}) => {
               );
           })}
           
-          <TouchableOpacity style={styles.notebook} activeOpacity={0.5} onPress={() => { addNotebook() }} >
+          <TouchableOpacity style={styles.notebook} activeOpacity={0.5} onPress={() => { this.props.addNotebook() }} >
             <Image source={require('../images/notebook.png')} style={{ width:107, height:78}}>
               <View style={styles.backdropView}>
                 <Text style={styles.headline}>
@@ -47,7 +58,7 @@ const HomeNotebooks = ({notebooks, addNotebook, openNotebook}) => {
         <Footer/>
       </View>
   	);
-  
+  }
 }
 
 
@@ -66,7 +77,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0)',
   },
   headline: {
-    fontSize: 30,
+    fontSize: 22,
     textAlign: 'center',
     backgroundColor: 'rgba(0,0,0,0)',
     color: 'black'
@@ -74,10 +85,10 @@ const styles = StyleSheet.create({
   notebook : {
     marginTop : 15, 
     marginLeft : 10,
-    width:107,
+    width:109,
     height:81,
     borderColor : '#179fda',
-    borderWidth : 0.7
+    borderWidth : 1.7
   }
 });
 

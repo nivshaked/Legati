@@ -6,8 +6,15 @@ const notebooks = (state = [], action) => {
 		case "ADD_NOTEBOOK":
 			return [
 				...state,
-				{ name : action.name, id : id++}
+				{ name : action.payload.name, id : id++}
 			];
+		case "DELETE_NOTEBOOK":
+			return state.filter((notebook) => {
+				return notebook.id !== action.payload.id;
+			});
+
+		case "LOAD_STORAGE":
+			return action.payload.notebooks;
 		default:
 			return state;	
 

@@ -25,8 +25,6 @@ export default class CreateNotebook extends Component {
 		this.state= {language:""};
 	}
 	addNotebook() {
-		console.log(this);
-		console.log(this.props);
 		this.props.addNotebook(this.refs.nameInput._lastNativeText);
     this.refs.nameInput.setNativeProps({text:""});
 	}
@@ -83,8 +81,10 @@ export default class CreateNotebook extends Component {
 
   				{this.props.notebooks.map((notebook) => {
   					return(
-  						<View key={notebook.id} style={{flex :1, height:40,  alignItems: 'center', justifyContent : 'center'}}>
-   				 			<Text style={{color:"black"}}> {notebook.name} </Text>
+  						<View key={notebook.id} style={{flex :1, flexWrap: 'wrap', height:40,  alignItems: 'center', justifyContent : 'center'}}>
+                <View style={{backgroundColor:'#d7d7d7', height:21, borderColor:'black', borderWidth:0.5, borderRadius:5}}>
+   				 			   <Text style={{color:"black"}}>  x  {notebook.name}  </Text>
+                </View>
    				 		</View>
   						);
   				})}

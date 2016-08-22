@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => { 
 	return {
-		addNotebook: (name) => { dispatch({type:"ADD_NOTEBOOK", name : name}) }
+		addNotebook: (name) => { dispatch({type:"ADD_NOTEBOOK", payload : { name : name} } )}
 	};
 };
 
