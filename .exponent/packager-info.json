@@ -1,0 +1,8 @@
+{
+  "exponentServerPort": 19000,
+  "packagerPort": 19005,
+  "packagerPid": 49775,
+  "exponentServerNgrokUrl": "https://mb-fty.rnplay.legati.exp.direct",
+  "packagerNgrokUrl": "https://packager.mb-fty.rnplay.legati.exp.direct",
+  "ngrokPid": 49816
+}

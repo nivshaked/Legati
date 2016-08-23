@@ -4,7 +4,7 @@ import { createStore } from 'redux';
 import configureStore from './configureStore';
 import legatiApp from './reducers/index';
 import Button from 'react-native-button';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { MaterialIcons as Icon } from '@exponent/vector-icons';
 import SignUp from './components/SignUp';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -70,4 +70,4 @@ class legati extends Component {
 
 
 
-AppRegistry.registerComponent('legati', () => legati);
+AppRegistry.registerComponent('main', () => legati);

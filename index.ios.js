@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('legati', () => legati);
+AppRegistry.registerComponent('main', () => legati);
