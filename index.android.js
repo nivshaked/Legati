@@ -43,26 +43,28 @@ class legati extends Component {
 
   render() {
     return (
-      <Provider store={store}>
-      <Navigator
-      initialRoute = {{name : 'HomeNotebooks', HomeNotebooksContainer}}
-      configureScene={() => {
-                    return Navigator.SceneConfigs.FadeAndroid;
-      }}
-      renderScene={(route, navigator) => {
-       
-      switch (route.name) { 
-        case "HomeNotebooks":
-          return <HomeNotebooksContainer navigator={navigator}/>  
-        case "Notebook":
-          return <Notebook name={route.studentName} navigator={navigator}/>
-        case "CreateNotebook":
-          return <CreateNotebookContainer navigator={navigator}/>    
-         }}
-       }
+      <View style={{marginTop: 24, flex: 1}}>
+        <Provider store={store}>
+        <Navigator
+        initialRoute = {{name : 'HomeNotebooks', HomeNotebooksContainer}}
+        configureScene={() => {
+                      return Navigator.SceneConfigs.FadeAndroid;
+        }}
+        renderScene={(route, navigator) => {
+         
+        switch (route.name) { 
+          case "HomeNotebooks":
+            return <HomeNotebooksContainer navigator={navigator}/>  
+          case "Notebook":
+            return <Notebook name={route.studentName} navigator={navigator}/>
+          case "CreateNotebook":
+            return <CreateNotebookContainer navigator={navigator}/>    
+           }}
+         }
 
-      />
-      </Provider>
+        />
+        </Provider>
+      </View>
       )
   }
 }
