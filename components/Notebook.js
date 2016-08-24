@@ -4,7 +4,7 @@ import Footer from './Footer';
 import ContentOptionsBar from './ContentOptionsBar';
 import VideoWebTask from './VideoWebTask';
 import TextTask from './TextTask';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { MaterialIcons as Icon } from '@exponent/vector-icons';
 
 
 import {

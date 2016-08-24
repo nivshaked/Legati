@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Button from 'react-native-button';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { MaterialIcons as Icon } from '@exponent/vector-icons';
 import Header from './Header';
 import Footer from './Footer';
 

@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { MaterialIcons as Icon } from '@exponent/vector-icons';
 
 import { 
   View,
