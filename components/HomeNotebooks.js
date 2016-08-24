@@ -22,7 +22,7 @@ class HomeNotebooks extends Component {
   	render() { 
       return(
 		  <View style={{flex : 1}}>
-        <Header mode={this.state.headerMode} icon="menu">
+        <Header methods={{deleteNotebook : this.props.deleteNotebook, changeHeader : () => {this.setState({headerMode : 'header'})} }} id={this.state.selected} mode={this.state.headerMode} icon="menu">
           Home
         </Header>
         <View style={{flex : 1, flexDirection : 'row', flexWrap : 'wrap'}}>

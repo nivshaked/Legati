@@ -2,21 +2,31 @@ import React, { Component } from 'react';
 import Button from 'react-native-button';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
+
 import {
   AppRegistry,
   StyleSheet,
   Text,
+  TouchableHighlight,
   View
 } from 'react-native';
 
-const Header = ({children, icon, mode, id}) => {
+const Header = ({children, icon, mode, id, methods}) => {
     if (mode == "edit") { 
       return(
         <View style={styles.editBannerView}>    
             <Icon style={{ marginLeft:16 }} name="keyboard-arrow-left" size={27} color="white"/>
             <View style={{flex:0, flexDirection : 'row', marginRight: 15 }}>
-                <Icon style={{ marginLeft:25 }} name="edit" size={25} color="white"/>
-                <Icon style={{ marginLeft:25 }} name="delete" size={25} color="white"/>
+                <TouchableHighlight >
+                    <Icon style={{ marginLeft:25 }} name="edit" size={25} color="white"/>
+                </TouchableHighlight>
+                <TouchableHighlight onPress={() => {
+                  methods.deleteNotebook(id);
+                  methods.changeHeader();
+                  }
+                }>
+                    <Icon style={{ marginLeft:25 }} name="delete" size={25} color="white"/>
+                </TouchableHighlight>
             </View>
         </View>
     );
