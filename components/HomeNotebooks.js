@@ -69,6 +69,7 @@ HomeNotebooks.propTypes = {
   addNotebook : PropTypes.func.isRequired
 
 };
+
 const colors = ['#fed564', '#c7202c','#179fda'];
 const styles = StyleSheet.create({
   backdropView: {
