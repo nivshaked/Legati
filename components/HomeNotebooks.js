@@ -18,7 +18,12 @@ class HomeNotebooks extends Component {
         super(props);
         this.state = {headerMode : 'header', selected : false };
     }
+    notebookOnLongPress(notebook) { 
+      (this.state.selected === notebook.id) ?
+      this.setState({headerMode : 'header' , selected : false}) :
+      this.setState({headerMode : 'edit' , selected : notebook.id})
 
+    }
   	render() { 
       return(
 		  <View style={{flex : 1}}>
@@ -28,10 +33,7 @@ class HomeNotebooks extends Component {
         <View style={{flex : 1, flexDirection : 'row', flexWrap : 'wrap'}}>
           {this.props.notebooks.map((notebook) => { 
             return ( 
-                <TouchableOpacity style={styles.notebook} activeOpacity={0.5} key={notebook.id} onLongPress={() => {
-                  (this.state.selected === notebook.id) ?
-                   this.setState({headerMode : 'header' , selected : false}) :
-                   this.setState({headerMode : 'edit' , selected : notebook.id})}}
+                <TouchableOpacity style={styles.notebook} activeOpacity={0.5} key={notebook.id} onLongPress={() => {this.notebookOnLongPress(notebook)}}
                    onPress={() => {this.props.openNotebook(notebook.id, notebook.name)}}>
                 <Image  source={require('../images/notebook.png')} style={{width:107, height:78}}>
                 <Icon style={{position:'absolute',right:3.5, bottom:1, opacity : (this.state.selected === notebook.id) ? 1 : 0 }} name="check-circle" size={23} color="#4bd45b"/>

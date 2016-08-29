@@ -1,3 +1,4 @@
 export const ADD_NOTEBOOK = "ADD_NOTEBOOK";
 export const LOAD_STORAGE = "LOAD_STORAGE";
 export const DELETE_NOTEBOOK = "DELETE_NOTEBOOK";
+export const ADD_TEXT_TASK = "ADD_TEXT_TASK";

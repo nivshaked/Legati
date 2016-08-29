@@ -6,7 +6,7 @@ import { addNotebook }  from '../../actionCreators/notebookActions.js';
 
 describe('actionCreator', () =>{
 	it('creates and object with name and id' , () => { 
-		stateAfter = {type : 'ADD_NOTEBOOK', name : 'moshe'};
+		stateAfter = {type : 'ADD_NOTEBOOK', payload : {name : 'moshe'}};
 		expect(addNotebook('moshe')).toEqual(stateAfter);
 	});
 });
