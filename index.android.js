@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import configureStore from './configureStore';
-import legatiApp from './reducers/index';
-import Button from 'react-native-button';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import SignUp from './components/SignUp';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import HomeNotebooks from './components/HomeNotebooks';
-import HomeNotebooksContainer from './containers/HomeNotebooksContainer';
-import CreateNotebookContainer from './containers/CreateNotebookContainer';
-import SignUpStudent from './components/SignUpStudent';
-import SignUpTeacher from './components/SignUpTeacher';
-import Home from './components/Home';
-import CreateNotebook from './components/CreateNotebook';
-import AddText from './components/AddText';
-import Notebook from './components/Notebook';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import configureStore from './configureStore'
+import legatiApp from './reducers/index'
+import Button from 'react-native-button'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+import SignUp from './components/SignUp'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import HomeNotebooks from './components/HomeNotebooks'
+import HomeNotebooksContainer from './containers/HomeNotebooksContainer'
+import CreateNotebookContainer from './containers/CreateNotebookContainer'
+import SignUpStudent from './components/SignUpStudent'
+import SignUpTeacher from './components/SignUpTeacher'
+import Home from './components/Home'
+import CreateNotebook from './components/CreateNotebook'
+import AddText from './components/AddText'
+import Notebook from './components/Notebook'
 
 
 
@@ -70,4 +70,4 @@ class legati extends Component {
 
 
 
-AppRegistry.registerComponent('legati', () => legati);
+AppRegistry.registerComponent('legati', () => legati)

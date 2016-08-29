@@ -4,7 +4,7 @@ import CreateNotebook from '../components/CreateNotebook';
 const mapStateToProps = (state, ownProps) => { 
 	return {
 		notebooks: state.notebooks,
-		createNotebook : () => { ownProps.navigator.push({name : 'HomeNotebooks'})}
+		createNotebook : () => { ownProps.navigator.replace({name : 'HomeNotebooks'})}
 
 	};
 };
