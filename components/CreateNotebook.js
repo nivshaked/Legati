@@ -18,13 +18,28 @@ import {
   InteractionManager
 } from 'react-native';
 
+import { 
+  NavigationStyles
+} from '@exponent/ex-navigation';
 
 export default class CreateNotebook extends Component { 
 
+  static route = {
+
+    navigationBar : {
+      title:'Create Notebooks',
+      tintColor : "white",
+      backgroundColor : "#179fda"
+    }
+  }
+  
 	constructor(props){
 		super(props)
-		this.state= {language:"",renderPlaceholderOnly: true};
+		this.state= {language:"", renderPlaceholderOnly: true};
 	}
+	
+
+
   componentDidMount() {
     InteractionManager.runAfterInteractions(() => {
       this.setState({renderPlaceholderOnly: false});
@@ -33,30 +48,35 @@ export default class CreateNotebook extends Component {
 
   _renderPlaceholderView() {
     return (
-      <View>
-       <Header icon="keyboard-arrow-left">
-          Create Notebook
-        </Header>
+       <View>
+       <Text>
+       Loading...
+       </Text>
       </View>
     );
   }
 
-	addNotebook() {
-		this.props.addNotebook(this.refs.nameInput._lastNativeText);
+
+  
+  addNotebook() {
+    this.props.addNotebook(this.refs.nameInput._lastNativeText);
     this.refs.nameInput.setNativeProps({text:""});
-	}
+  }
+
+  
 
   render() {
 
-    if (this.state.renderPlaceholderOnly) { 
+    if (this.state.renderPlaceholderOnly) {
       return this._renderPlaceholderView();
     }
 
-  	return (
+  	return(
   		<View>
-  			<Header icon="keyboard-arrow-left">
+
+  			{/*<Header icon="keyboard-arrow-left">
   				Create Notebook
-  			</Header>
+  			</Header>*/}
   			<KeyboardAvoidingView style={{alignItems: 'center', marginTop:10}}>
   				
   				<View style= {styles.container}>

@@ -21,13 +21,25 @@ export default class AddText extends Component {
 		super()
 		this.state= {language:"asd"};
 	}
+
+  /*onClickShare = () => { 
+    
+  }*/
+
+  static route = {
+    
+    navigationBar : {
+      title(params) {
+        return  'Add Text';
+      },
+      tintColor : "white",
+      backgroundColor : "#179fda"
+    }
+  }
+
   render() {
   	return(
   		<View style={{flex:1}}>
-  			<Header icon="keyboard-arrow-right">
-  				רון
-  			</Header>
-
   			<View style={{borderWidth:3, borderColor: '#fed564', flex:1, alignItems : 'center'}}>
   				<View style={{marginTop: 10, marginLeft: 10, marginRight:10, flex:1}}>
   					<TextInput style={{fontSize: 20,fontWeight:'bold', height: 50, width:315}} placeholder="כותרת" underlineColorAndroid= 'transparent' />

@@ -6,10 +6,12 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
   },
-  "jest" : {
-    "preset" : "jest-react-native"
-    },
+  "jest": {
+    "preset": "jest-react-native"
+  },
   "dependencies": {
+    "@exponent/ex-navigation": "^1.5.12",
+    "babel-preset-react-native-stage-0": "^1.0.1",
     "react": "15.2.1",
     "react-native": "0.30.0",
     "react-native-button": "^1.6.0",

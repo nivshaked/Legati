@@ -11,25 +11,30 @@ import {
 } from 'react-native';
 
 export default class Footer extends Component {
+
+  _onPress(route){
+    this.props.navigate(route)  
+  }
+
   render() {
   	return(
 		    <View style= {styles.footer}>
-          <TouchableHighlight underlayColor='#eeeeee' style={{flex :1, height:40}} activeOpacity={0.5} onPress={() => {}}>
+          <TouchableHighlight  underlayColor='#eeeeee' style={{flex :1, height:40}} activeOpacity={0.5} onPress={() => this._onPress('attach')}>
             <View style={styles.footerIcons}>  
               <Icon name="attach-file" size={24} color="#676767" />
             </View> 
           </TouchableHighlight>
-          <TouchableHighlight underlayColor='#eeeeee' style={{flex :1, height:40}} activeOpacity={0.5} onPress={() => {}}>
+          <TouchableHighlight underlayColor='#eeeeee' style={{flex :1, height:40}} activeOpacity={0.5} onPress={() => this._onPress('video')}>
             <View style={styles.footerIcons}>
               <Icon name="videocam" size={28} color="#676767"/>
             </View>
           </TouchableHighlight>
-          <TouchableHighlight underlayColor='#eeeeee' style={{flex :1, height:40}} activeOpacity={0.5} onPress={() => {}}>
+          <TouchableHighlight underlayColor='#eeeeee' style={{flex :1, height:40}} activeOpacity={0.5} onPress={() => this._onPress('mic')}>
             <View style={styles.footerIcons}>
               <Icon name="mic" size={27} color="#676767"/>
              </View>
           </TouchableHighlight>     
-          <TouchableHighlight underlayColor='#eeeeee' style={{flex :1, height:40}} activeOpacity={0.5} onPress={() => {}}>   
+          <TouchableHighlight underlayColor='#eeeeee' style={{flex :1, height:40}} activeOpacity={0.5} onPress={() => this._onPress('AddText')}>   
              <View style={styles.footerIcons}>
               <Icon name="subject" size={25} color="#676767" /> 
             </View>

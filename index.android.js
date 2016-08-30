@@ -17,7 +17,7 @@ import Home from './components/Home'
 import CreateNotebook from './components/CreateNotebook'
 import AddText from './components/AddText'
 import Notebook from './components/Notebook'
-
+import Router from './navigation/Router'
 
 
 import {
@@ -27,16 +27,22 @@ import {
   ScrollView,
   Image,
   View,
-  Navigator
+  Navigator,
+  StatusBar
 } from 'react-native';
 
-
+import {
+  NavigationProvider,
+  StackNavigation,
+  NavigationContext
+} from '@exponent/ex-navigation';
 /*const store = configureStore();*/
 /*const apiMiddleware = ({dispatch, getState}) => next => action => { 
   
 }*/
 
 const store = configureStore();
+const navigationContext = new NavigationContext({store, Router});
 /*configureScene={() => {
                     return Navigator.SceneConfigs.FadeAndroid;
       }}*/
@@ -46,7 +52,21 @@ class legati extends Component {
   render() {
     return (
       <Provider store={store}>
-      <Navigator
+          <NavigationProvider router={Router}>
+              <StatusBar translucent={true} />
+              <StackNavigation initialRoute={Router.getRoute('HomeNotebooks')}/>
+          </NavigationProvider>
+      </Provider>
+      )
+  }
+}
+
+
+
+
+AppRegistry.registerComponent('legati', () => legati)
+
+{/*<Navigator
       initialRoute = {{name : 'HomeNotebooks', HomeNotebooksContainer}}
       configureScene={() => {
                     return Navigator.SceneConfigs.FloatFromBottomAndroid;
@@ -63,13 +83,4 @@ class legati extends Component {
          }}
        }
 
-      />
-      </Provider>
-      )
-  }
-}
-
-
-
-
-AppRegistry.registerComponent('legati', () => legati)
+      />*/}
