@@ -4,9 +4,11 @@ import { deleteNotebook } from '../actionCreators/notebookActions';
 import Router from '../navigation/Router';
 const mapStateToProps = (state, ownProps) => { 
 	return {
+
+		navigate: (route) => { ownProps.navigator.push(Router.getRoute(route))},
 		notebooks: state.notebooks,
 		addNotebook: () => { ownProps.navigator.push(Router.getRoute('CreateNotebook'))},
-		openNotebook: (id,name) => {ownProps.navigator.replace(Router.getRoute('Notebook',{name: name}))}
+		openNotebook: (id,name) => {ownProps.navigator.push(Router.getRoute('Notebook',{name: name}))}
 
 	};
 }

@@ -17,12 +17,25 @@ import {
   Navigator
 } from 'react-native';
 
-const Notebook = ({name}) => { 
+class Notebook extends Component {  
+
+    static route = {
+    
+    navigationBar : {
+      title(params) {
+        return params.name
+      },
+      tintColor : "white",
+      backgroundColor : "#179fda"
+    }
+  }
+
+  render() {
     return (
       <View style={{backgroundColor: "white", flex: 1}}>
-        <Header icon="keyboard-arrow-left">
+        {/*<Header icon="keyboard-arrow-left">
           {name}
-        </Header>
+        </Header>*/}
        {/*lesson view*/}
        <ScrollView>
        <View style={styles.lesson}>
@@ -74,8 +87,10 @@ const Notebook = ({name}) => {
        <Footer/>
       </View>
       );
-  
+  }
 }
+  
+
 
 const styles = StyleSheet.create({
   lesson: {

@@ -10,26 +10,59 @@ import {
   Text,
   TouchableOpacity,
   Image,
-  View
+  View,
+  InteractionManager
 } from 'react-native';
+
 
 class HomeNotebooks extends Component {
     constructor(props) { 
         super(props);
-        this.state = {headerMode : 'header', selected : false };
+        this.state = {headerMode : 'header', selected : false, renderPlaceholderOnly: true };
     }
+
+    componentDidMount() {
+    InteractionManager.runAfterInteractions(() => {
+      this.setState({renderPlaceholderOnly: false});
+    });
+    }
+
     notebookOnLongPress(notebook) { 
       (this.state.selected === notebook.id) ?
       this.setState({headerMode : 'header' , selected : false}) :
       this.setState({headerMode : 'edit' , selected : notebook.id})
 
     }
+
+    _renderPlaceholderView() {
+    return (
+      <View>
+       <Text>
+       Loading...
+       </Text>
+      </View>
+    );
+    }
+
+    static route = {
+    
+    navigationBar : {
+      title:'Home',
+      tintColor : "white",
+      backgroundColor : "#179fda"
+      }
+    }
   	render() { 
-      return(
+
+      if (this.state.renderPlaceholderOnly) {
+      return this._renderPlaceholderView();
+      }
+
+      return (
 		  <View style={{flex : 1}}>
-        <Header methods={{deleteNotebook : this.props.deleteNotebook, changeHeader : () => {this.setState({headerMode : 'header'})} }} id={this.state.selected} mode={this.state.headerMode} icon="menu">
+        {/*<Header methods={{deleteNotebook : this.props.deleteNotebook, changeHeader : () => {this.setState({headerMode : 'header'})} }} id={this.state.selected} mode={this.state.headerMode} icon="menu">
           Home
-        </Header>
+        </Header>*/}
         <View style={{flex : 1, flexDirection : 'row', flexWrap : 'wrap'}}>
           {this.props.notebooks.map((notebook) => { 
             return ( 
@@ -56,9 +89,9 @@ class HomeNotebooks extends Component {
               </View>
             </Image>
           </TouchableOpacity>
+          </View>
+            <Footer navigate={this.props.navigate}/>
         </View>
-        <Footer/>
-      </View>
   	);
   }
 }

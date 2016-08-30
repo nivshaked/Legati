@@ -5,7 +5,7 @@ import Router from '../navigation/Router'
 const mapStateToProps = (state, ownProps) => { 
 	return {
 		notebooks: state.notebooks,
-		createNotebook : () => { ownProps.navigator.push(Router.getRoute('HomeNotebooks'))}
+		createNotebook : () => { ownProps.navigator.pop()}
 
 	};
 };

@@ -27,7 +27,8 @@ import {
   ScrollView,
   Image,
   View,
-  Navigator
+  Navigator,
+  StatusBar
 } from 'react-native';
 
 import {
@@ -52,6 +53,7 @@ class legati extends Component {
     return (
       <Provider store={store}>
           <NavigationProvider router={Router}>
+              <StatusBar translucent={true} />
               <StackNavigation initialRoute={Router.getRoute('HomeNotebooks')}/>
           </NavigationProvider>
       </Provider>

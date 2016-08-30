@@ -24,14 +24,20 @@ import {
 
 export default class CreateNotebook extends Component { 
 
+  static route = {
+
+    navigationBar : {
+      title:'Create Notebooks',
+      tintColor : "white",
+      backgroundColor : "#179fda"
+    }
+  }
+  
 	constructor(props){
 		super(props)
 		this.state= {language:"", renderPlaceholderOnly: true};
 	}
-	addNotebook() {
-		this.props.addNotebook(this.refs.nameInput._lastNativeText);
-    this.refs.nameInput.setNativeProps({text:""});
-	}
+	
 
   componentDidMount() {
     InteractionManager.runAfterInteractions(() => {
@@ -42,16 +48,19 @@ export default class CreateNotebook extends Component {
   _renderPlaceholderView() {
     return (
       <View>
-       <Header icon="keyboard-arrow-left">
-          Create Notebook
-        </Header>
+       <Text>
+       Loading...
+       </Text>
       </View>
     );
   }
   
-  static route = {
-    styles : NavigationStyles.Fade
+  addNotebook() {
+    this.props.addNotebook(this.refs.nameInput._lastNativeText);
+    this.refs.nameInput.setNativeProps({text:""});
   }
+
+  
 
   render() {
 
@@ -61,9 +70,10 @@ export default class CreateNotebook extends Component {
 
   	return(
   		<View>
-  			<Header icon="keyboard-arrow-left">
+
+  			{/*<Header icon="keyboard-arrow-left">
   				Create Notebook
-  			</Header>
+  			</Header>*/}
   			<KeyboardAvoidingView style={{alignItems: 'center', marginTop:10}}>
   				
   				<View style= {styles.container}>
