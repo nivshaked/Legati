@@ -17,6 +17,9 @@ import {
   View
 } from 'react-native';
 
+import { 
+  NavigationStyles
+} from '@exponent/ex-navigation';
 
 export default class CreateNotebook extends Component { 
 
@@ -28,6 +31,10 @@ export default class CreateNotebook extends Component {
 		this.props.addNotebook(this.refs.nameInput._lastNativeText);
     this.refs.nameInput.setNativeProps({text:""});
 	}
+
+  static route = {
+    styles : NavigationStyles.FloatVertical
+  }
   render() {
   	return(
   		<View>

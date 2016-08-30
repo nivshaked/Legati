@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import HomeNotebooks from '../components/HomeNotebooks';
 import { deleteNotebook } from '../actionCreators/notebookActions';
-
+import Router from '../navigation/Router';
 const mapStateToProps = (state, ownProps) => { 
 	return {
 		notebooks: state.notebooks,
-		addNotebook: () => { ownProps.navigator.replace({name : 'CreateNotebook'})},
-		openNotebook: (id,name) => {ownProps.navigator.replace({name:'Notebook', id:id, studentName:name})}
+		addNotebook: () => { ownProps.navigator.push(Router.getRoute('CreateNotebook'))},
+		openNotebook: (id,name) => {ownProps.navigator.replace(Router.getRoute('Notebook',{name: name}))}
 
 	};
 }
