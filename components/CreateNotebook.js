@@ -14,7 +14,8 @@ import {
   ScrollView,
   KeyboardAvoidingView,
   TouchableNativeFeedback,
-  View
+  View,
+  InteractionManager
 } from 'react-native';
 
 
@@ -22,14 +23,36 @@ export default class CreateNotebook extends Component {
 
 	constructor(props){
 		super(props)
-		this.state= {language:""};
+		this.state= {language:"",renderPlaceholderOnly: true};
 	}
+  componentDidMount() {
+    InteractionManager.runAfterInteractions(() => {
+      this.setState({renderPlaceholderOnly: false});
+    });
+  }
+
+  _renderPlaceholderView() {
+    return (
+      <View>
+       <Header icon="keyboard-arrow-left">
+          Create Notebook
+        </Header>
+      </View>
+    );
+  }
+
 	addNotebook() {
 		this.props.addNotebook(this.refs.nameInput._lastNativeText);
     this.refs.nameInput.setNativeProps({text:""});
 	}
+
   render() {
-  	return(
+
+    if (this.state.renderPlaceholderOnly) { 
+      return this._renderPlaceholderView();
+    }
+
+  	return (
   		<View>
   			<Header icon="keyboard-arrow-left">
   				Create Notebook
