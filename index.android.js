@@ -48,7 +48,9 @@ class legati extends Component {
       <Provider store={store}>
       <Navigator
       initialRoute = {{name : 'HomeNotebooks', HomeNotebooksContainer}}
-      
+      configureScene={() => {
+                    return Navigator.SceneConfigs.FloatFromBottomAndroid;
+      }}
       renderScene={(route, navigator) => {
        
       switch (route.name) { 
