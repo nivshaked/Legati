@@ -6,7 +6,7 @@ const mapStateToProps = (state, ownProps) => {
 	return {
 		notebooks: state.notebooks,
 		addNotebook: () => { ownProps.navigator.push({name : 'CreateNotebook'})},
-		openNotebook: (id,name) => {ownProps.navigator.replace({name:'Notebook', id:id, studentName:name})}
+		openNotebook: (id,name) => {ownProps.navigator.push({name:'Notebook', id:id, studentName:name})}
 
 	};
 }
