@@ -50,7 +50,7 @@ export default class CreateNotebook extends Component {
   }
   
   static route = {
-    styles : NavigationStyles.FloatVertical
+    styles : NavigationStyles.Fade
   }
 
   render() {
