@@ -1,8 +1,11 @@
 import { ADD_NOTEBOOK, DELETE_NOTEBOOK, ADD_TEXT_TASK } from "./actionTypes";
 
-export const addNotebook = (name) => ({
+export const addNotebook = ({name, shared, instrument, years}) => ({
 	type : ADD_NOTEBOOK,
-	payload : {name : name}
+	payload : { name : name,
+				shared : shared,
+				instrument : instrument,
+				years : years}
 });
 
 export const deleteNotebook = (id) => ({

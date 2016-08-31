@@ -59,7 +59,7 @@ export default class CreateNotebook extends Component {
 
   
   addNotebook() {
-    this.props.addNotebook(this.refs.nameInput._lastNativeText);
+    this.props.addNotebook({name : this.refs.nameInput._lastNativeText});
     this.refs.nameInput.setNativeProps({text:""});
   }
 
@@ -67,9 +67,9 @@ export default class CreateNotebook extends Component {
 
   render() {
 
-    if (this.state.renderPlaceholderOnly) {
+    /*if (this.state.renderPlaceholderOnly) {
       return this._renderPlaceholderView();
-    }
+    }*/
 
   	return(
   		<View>

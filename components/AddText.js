@@ -19,7 +19,7 @@ import {
 export default class AddText extends Component { 
   constructor(){
 		super()
-		this.state= {language:"asd"};
+		this.state= {student:""};
 	}
 
   /*onClickShare = () => { 
@@ -56,8 +56,8 @@ export default class AddText extends Component {
   				</TouchableOpacity>
   				<View style={{flex :1, height:40, alignItems: 'center', justifyContent : 'center'}}>
             <Picker style={{height:50, width : 105}}
-            selectedValue={this.state.language}
-            onValueChange={(lang) => this.setState({language: lang})}>
+            selectedValue={this.state.student}
+            onValueChange={(student) => this.setState({student: student})}>
               <Picker.Item label="Instrument" value="Instrument"/>
               <Picker.Item label="1 - 3 years" value="1-3 years"/>
               <Picker.Item label="3 - 7 years" value="3-7 years"/>
@@ -65,14 +65,9 @@ export default class AddText extends Component {
           </Picker>
           </View>
   				<View style={{flex :1, height:40, alignItems: 'center', justifyContent : 'center'}}>
-  					<Picker style={{height:50, width : 105}}
-  					selectedValue={this.state.language}
-  					onValueChange={(lang) => this.setState({language: lang})}>
-  						<Picker.Item label="Instrument" value="Instrument"/>
-  						<Picker.Item label="1 - 3 years" value="1-3 years"/>
-  						<Picker.Item label="3 - 7 years" value="3-7 years"/>
-  						<Picker.Item label="7 + years" value="7+ years"/>
-					</Picker>
+  					<Text>
+            Create
+            </Text>
   				</View>
   			</View>
   		</View>

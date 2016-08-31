@@ -1,4 +1,4 @@
-
+let id = 1;
 /*const initialState = {0 : {text : "please do", title : "practice scales", networkStatus:'unsent'}};*/
 const textTask = (state = {}, action) => {
 		switch (action.type) { 

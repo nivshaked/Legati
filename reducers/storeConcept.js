@@ -1,5 +1,6 @@
 store1 = {
-	notebooksById: { id1 : { name : "name", shared : [userId1, userId2] || false, lessons : [ lessonId1, lessonId2, lessonId3]},
+	notebooks : [{id: "id", name : "elad"}, ... ],
+	notebooksById: { id1 : { name : "name", shared : [userId1, userId2] || false, lessons : [ lessonId1, lessonId2, lessonId3], instrument : "name of instrument", years : "number of years student is playing"},
 					 id2: {},
 					 id3: {},
 					 id4: {}
