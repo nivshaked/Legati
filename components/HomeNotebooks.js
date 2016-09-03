@@ -33,6 +33,11 @@ class HomeNotebooks extends Component {
       this.setState({headerMode : 'edit' , selected : notebook.id})
 
     }
+/*    this function is for ease of testing only
+*/
+    notebookOnLongPressTest(notebook){
+        this.props.deleteNotebook(notebook.id)
+    }
 
     _renderPlaceholderView() {
     return (
@@ -66,7 +71,7 @@ class HomeNotebooks extends Component {
         <View style={{flex : 1, flexDirection : 'row', flexWrap : 'wrap'}}>
           {this.props.notebooks.map((notebook) => { 
             return ( 
-                <TouchableOpacity style={styles.notebook} activeOpacity={0.5} key={notebook.id} onLongPress={() => {this.notebookOnLongPress(notebook)}}
+                <TouchableOpacity style={styles.notebook} activeOpacity={0.5} key={notebook.id} onLongPress={() => {this.notebookOnLongPressTest(notebook)}}
                    onPress={() => {this.props.openNotebook(notebook.id, notebook.name)}}>
                 <Image  source={require('../images/notebook.png')} style={{width:107, height:78}}>
                 <Icon style={{position:'absolute',right:3.5, bottom:1, opacity : (this.state.selected === notebook.id) ? 1 : 0 }} name="check-circle" size={23} color="#4bd45b"/>
