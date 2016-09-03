@@ -82,7 +82,7 @@ export default class CreateNotebook extends Component {
   				<View style= {styles.container}>
   					<TextInput ref="nameInput" style={styles.textInput}  placeholder="Notebook name" />
   				</View>
-          <View style= {{flex:1, flexDirection : 'row', width:300, height: 60, marginTop:-8}}>
+          <View style= {{flex:1, flexDirection : 'row', width:300, height: 60, marginTop:-15}}>
             <TextInput  style={{flex:2.5, height:40}}  placeholder="Share with (Type an email address)" />
           </View>
 
@@ -114,18 +114,18 @@ export default class CreateNotebook extends Component {
  	 				</View>
   				</TouchableNativeFeedback>
   				
-  				<View style={{borderBottomWidth: 0.7,borderBottomColor: '#a8a8a8', width: 300, marginTop: 25}}>
+  				<View style={{borderBottomWidth: 0.7,borderBottomColor: '#a8a8a8', width: 300, marginTop: 40}}>
   					<View style={{alignSelf: 'flex-start'}}>
   						<Text style={{color:'black'}}> Notebooks added</Text>
   					</View>
   				</View>
 
-  				<View style= {{flex:1, flexDirection:'row', alignItems: 'center',height:40, width:300}}>
+  				<View style= {{flex:1, flexDirection:'row', flexWrap : 'wrap', alignItems: 'center',height:40, width:300}}>
 
   				{this.props.notebooks.map((notebook) => {
   					return(
-  						<View key={notebook.id} style={{flex :1, flexWrap: 'wrap', height:40,  alignItems: 'center', justifyContent : 'center'}}>
-                <View style={{backgroundColor:'#d7d7d7', height:21, borderColor:'black', borderWidth:0.5, borderRadius:5}}>
+  						<View key={notebook.id} style={{flex :1, height:40,  alignItems: 'center', justifyContent : 'center', width:60}}>
+                <View style={{backgroundColor:'#d1d1d1', height:21, borderColor:'black', borderWidth:0.5, borderRadius:5, width:60}}>
    				 			   <Text style={{color:"black"}}>  x  {notebook.name}  </Text>
                 </View>
    				 		</View>
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
     flexDirection : 'row',
     width:300,
     height: 60,
-    marginTop:7
+    marginTop:-7
   },
   textInput: {
     height: 40,

@@ -42,10 +42,10 @@ export default class AddText extends Component {
   		<View style={{flex:1}}>
   			<View style={{borderWidth:3, borderColor: '#fed564', flex:1, alignItems : 'center'}}>
   				<View style={{marginTop: 10, marginLeft: 10, marginRight:10, flex:1}}>
-  					<TextInput style={{fontSize: 20,fontWeight:'bold', height: 50, width:315}} placeholder="כותרת" underlineColorAndroid= 'transparent' />
+  					<TextInput style={{fontSize: 20,fontWeight:'bold', height: 50, width:315}} placeholder="Title" underlineColorAndroid= 'transparent' />
   				</View>
   				<View style={{marginLeft: 10, marginRight:10, flex:13}}>
-  					<TextInput style={{fontSize: 18, width:315, flex:1, textAlignVertical : 'top'}}  multiline={true} placeholder="תוכן" underlineColorAndroid= 'transparent' />
+  					<TextInput style={{fontSize: 18, width:315, flex:1, textAlignVertical : 'top'}}  multiline={true} placeholder="Content" underlineColorAndroid= 'transparent' />
   				</View>
   			</View>
 

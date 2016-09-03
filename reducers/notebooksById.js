@@ -14,7 +14,11 @@ const notebooksById = (state = {}, action) => {
 			}
 
 		case "LOAD_STORAGE":
-			return action.payload.notebooksById;
+			if (action.payload.notebooksById) {
+				return action.payload.notebooksById;
+			}
+			
+			return state;
 		default:
 			return state;	
 

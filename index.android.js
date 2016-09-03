@@ -18,6 +18,7 @@ import CreateNotebook from './components/CreateNotebook'
 import AddText from './components/AddText'
 import Notebook from './components/Notebook'
 import Router from './navigation/Router'
+import AddVideo from './components/AddVideo'
 
 
 import {
