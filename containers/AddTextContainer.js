@@ -1,28 +1,28 @@
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 import AddText from '../components/AddText'
-import { deleteNotebook } from '../actionCreators/notebookActions';*/
-import Router from '../navigation/Router';
+import { deleteNotebook } from '../actionCreators/notebookActions'
+import Router from '../navigation/Router'
+
 const mapStateToProps = (state, ownProps) => { 
 	return {
-
-		navigate: (route) => { ownProps.navigator.push(Router.getRoute(route))},
 		notebooks: state.notebooks,
-		addNotebook: () => { ownProps.navigator.push(Router.getRoute('CreateNotebook'))},
-		openNotebook: (id,name) => {ownProps.navigator.push(Router.getRoute('Notebook',{name: name}))}
+		navigate: (route) => { ownProps.navigator.push(Router.getRoute(route))},
+		
+		};
 
 
 	};
-}
+
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		deleteNotebook : (id) => dispatch(deleteNotebook(id))
+		addTextTask : ({id,text,title,shared}) => dispatch(deleteNotebook(id))
 	};
 };
 
-const HomeNotebooksContainer = connect(
+const AddTextContainer = connect(
 	mapStateToProps,
 	mapDispatchToProps
-	)(HomeNotebooks);
+	)(AddText);
 
-export default HomeNotebooksContainer;
+export default AddTextContainer;

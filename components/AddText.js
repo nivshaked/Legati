@@ -15,19 +15,13 @@ import {
   View
 } from 'react-native';
 
-
 export default class AddText extends Component { 
-  constructor(){
-		super()
-		this.state= {student:""};
+  constructor(props){
+		super(props)
+		this.state = {student: "", shared : false};
 	}
 
-  /*onClickShare = () => { 
-    
-  }*/
-
   static route = {
-    
     navigationBar : {
       title(params) {
         return  'Add Text';
@@ -56,13 +50,10 @@ export default class AddText extends Component {
   				</TouchableOpacity>
   				<View style={{flex :1, height:40, alignItems: 'center', justifyContent : 'center'}}>
             <Picker style={{height:50, width : 105}}
-            selectedValue={this.state.student}
-            onValueChange={(student) => this.setState({student: student})}>
-              <Picker.Item label="Instrument" value="Instrument"/>
-              <Picker.Item label="1 - 3 years" value="1-3 years"/>
-              <Picker.Item label="3 - 7 years" value="3-7 years"/>
-              <Picker.Item label="7 + years" value="7+ years"/>
-          </Picker>
+              selectedValue={this.state.student}
+              onValueChange={(student) => this.setState({student: student})}>
+              {this.props.notebooks.map((notebooks) => <Picker.Item key={notebooks.id} label={notebooks.name} value={notebooks.id}/>)}
+            </Picker>
           </View>
   				<View style={{flex :1, height:40, alignItems: 'center', justifyContent : 'center'}}>
   					<Text>

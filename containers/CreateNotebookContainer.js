@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import CreateNotebook from '../components/CreateNotebook';
 import Router from '../navigation/Router'
+import { addNotebook } from '../actionCreators/notebookActions.js'
 
 const mapStateToProps = (state, ownProps) => { 
 	return {
@@ -12,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => { 
 	return {
-		addNotebook: ({name}) => { dispatch({type:"ADD_NOTEBOOK", payload : { name : name} } )}
+		addNotebook: ({name,years,shared,instrument}) => { dispatch(addNotebook({name,years,shared,instrument}))}
 	};
 };
 
