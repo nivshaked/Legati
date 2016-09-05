@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import Header from './Header';
+import React, { Component } from 'react'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+import Header from './Header'
+import CreateTaskBar from './CreateTaskBar'
 
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   TextInput,
@@ -13,7 +13,7 @@ import {
   KeyboardAvoidingView,
   TouchableNativeFeedback,
   View
-} from 'react-native';
+} from 'react-native'
 
 export default class AddText extends Component { 
   constructor(props){
@@ -34,6 +34,7 @@ export default class AddText extends Component {
   render() {
   	return(
   		<View style={{flex:1}}>
+
   			<View style={{borderWidth:3, borderColor: '#fed564', flex:1, alignItems : 'center'}}>
   				<View style={{marginTop: 10, marginLeft: 10, marginRight:10, flex:1}}>
   					<TextInput style={{fontSize: 20,fontWeight:'bold', height: 50, width:315}} placeholder="Title" underlineColorAndroid= 'transparent' />
@@ -43,24 +44,9 @@ export default class AddText extends Component {
   				</View>
   			</View>
 
-  			<View style={{position: 'absolute',left: 0,right: 0, bottom: 0, borderTopWidth: 3, borderTopColor: '#fed564', backgroundColor:'#f9f9f9', flex:1, flexDirection:'row', alignItems: 'center', height:42}}>
-  				<TouchableOpacity activeOpacity={0.5} style={{flex :1, height:40, alignItems: 'center', justifyContent : 'center'}}>
-  					<Icon name="people" size={25} color="#676767" /> 
-  					<Text style={{marginTop:-9, fontSize:13.5}}>שיתוף</Text>
-  				</TouchableOpacity>
-  				<View style={{flex :1, height:40, alignItems: 'center', justifyContent : 'center'}}>
-            <Picker style={{height:50, width : 105}}
-              selectedValue={this.state.student}
-              onValueChange={(student) => this.setState({student: student})}>
-              {this.props.notebooks.map((notebooks) => <Picker.Item key={notebooks.id} label={notebooks.name} value={notebooks.id}/>)}
-            </Picker>
-          </View>
-  				<View style={{flex :1, height:40, alignItems: 'center', justifyContent : 'center'}}>
-  					<Text>
-            Create
-            </Text>
-  				</View>
-  			</View>
+        <CreateTaskBar notebooks={this.props.notebooks} selectedStudentId={this.props.notebooks[2].id}/>
+
+  			
   		</View>
   	)
   }
