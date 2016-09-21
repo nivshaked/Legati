@@ -24,6 +24,10 @@ export default class AddText extends Component {
   static route = {
     navigationBar : {
       title(params) {
+        if (params.title) { 
+            return params.title;
+        }
+        
         return  'Add Text';
       },
       tintColor : "white",

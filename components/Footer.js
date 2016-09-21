@@ -24,7 +24,7 @@ export default class Footer extends Component {
               <Icon name="attach-file" size={24} color="#676767" />
             </View> 
           </TouchableHighlight>
-          <TouchableHighlight underlayColor='#eeeeee' style={{flex :1, height:40}} activeOpacity={0.5} onPress={() => this._onPress('video')}>
+          <TouchableHighlight underlayColor='#eeeeee' style={{flex :1, height:40}} activeOpacity={0.5} onPress={() => this.props.navigate('Camera', {navigate : this.props.navigate})}>
             <View style={styles.footerIcons}>
               <Icon name="videocam" size={28} color="#676767"/>
             </View>
