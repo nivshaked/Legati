@@ -1,6 +1,6 @@
 store1 = {
 	notebooks : [{id: "id", name : "elad"}, ... ],
-	notebooksById: { id1 : { name : "name", shared : [userId1, userId2] || false, lessons : [ lessonId1, lessonId2, lessonId3], instrument : "name of instrument", years : "number of years student is playing"},
+	notebooksById: { id1 : { name : "name", shared : [userId1, userId2] , lessons : [ lessonId1, lessonId2, lessonId3], instrument : "name of instrument", years : "number of years student is playing"},
 					 id2: {},
 					 id3: {},
 					 id4: {}
@@ -24,4 +24,41 @@ store1 = {
 			   failed : [{type , id}]
 
 				}
+}
+
+
+
+store2 = { 
+	notebooks : {
+		id : id, 
+		name : "name", 
+		shared : [userid, userid],
+		lessons : [
+			{
+				date : "23.4.5",
+				title : "",
+				content : [{
+					videoUrl : url, 
+					text : text, 
+					title : title, 
+					audioUrl : url,
+					isShared : true || false
+					sendStatus : 'sent' || 'unsent' || 'sending' 
+				}]
+			}
+
+		]
+	}
+
+	user = {
+		id : id,
+		email : email, 
+		firstName : name,
+		lastName: lastName,
+		passwordHash : password,
+		instrument : instrument,
+		role : 'teacher' || 'parent' || 'student',
+		doSince : years
+	}
+
 }
