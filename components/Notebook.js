@@ -5,7 +5,7 @@ import ContentOptionsBar from './ContentOptionsBar';
 import VideoWebTask from './VideoWebTask';
 import TextTask from './TextTask';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
+import { Card, Button } from 'react-native-material-design';
 
 import {
   StyleSheet,
@@ -45,43 +45,32 @@ class Notebook extends Component {
        			25/5/2015
        			</Text>
        			 <Icon name="more-vert" size={23} color="black"/>
-       		</View>
-       		{/*individual tasks text view*/}
-       		<View style={styles.taskContainer}>
-       			<TextTask  title="asdwwww" />
-            {/*share and edit bar*/}
-            <ContentOptionsBar shared={true}/>
+       		</View>        
+             <Card style={{backgroundColor: '#f8f8f8'}}>
+               <Card.Body>
+                   <Text style={styles.textTitle}> 
+                      Chords
+                  </Text>
+                  <Text style={styles.textNote}>
+                    Today we worked on chords playing: practice on the diatonic chords in C,D,G major scale
+                  </Text>
+                </Card.Body>
+                <Card.Actions position= "right">
+                    <Icon style={{marginBottom:10, marginRight:10}} name="mode-edit" size={20} color="#9da6ad"/> 
+                 </Card.Actions>
+              </Card>
 
-       		</View>
-
-          {/*individual task video view*/}
-          <View style={styles.taskContainer}>
-            <VideoWebTask url={'https://www.youtube.com/embed/IbnT2EiXI_E'}/>
-            <ContentOptionsBar shared={true}/>
-          </View>
-
-       		<View style= {styles.taskContainer}>
-       			<View style={styles.textContainer}>
-              <Text style={styles.textTitle}> 
-                אקורדים
-              </Text>
-       			  <Text style={styles.textNote}>
-       				 היום עבדנו על נגינת אקורדים- אקורדים מינורים ומז'ורים.
-               תחזור על נגינת האקורדים הדיאטונים בסולמות דו,
-               סול ורה מז'ור	
-       		   	</Text>
-       			</View>
-            <ContentOptionsBar shared={true}/>
-       		</View>
-       		<View style={styles.taskContainer}>
-       			<View style={styles.textContainer}>
-       			<Text style={styles.textNote}>
-       				practice scales and more please asdasd  
-       			</Text>
-       			</View>
-       		</View>
-       </View>
-       <View style={{height:40}}>
+               <Card style={{backgroundColor: '#f8f8f8'}}>
+               <Card.Body>
+                   <Text style={styles.textTitle}> 
+                      My favorit things
+                  </Text>
+                  <VideoWebTask url={'https://www.youtube.com/embed/IbnT2EiXI_E'}/>
+                </Card.Body>
+                <Card.Actions position= "right">
+                    <Icon style={{marginBottom:10, marginRight:10}} name="mode-edit" size={20} color="#9da6ad"/> 
+                 </Card.Actions>
+              </Card>          
        </View>
        </ScrollView>
        <Footer/>
@@ -102,7 +91,7 @@ const styles = StyleSheet.create({
     justifyContent:'space-between',
     alignItems: 'center',
     padding: 16,
-    paddingBottom: 0
+    paddingBottom: 7
   },
   date:{
     width:110,
@@ -123,15 +112,16 @@ const styles = StyleSheet.create({
   },
   textTitle: {
     fontWeight:'bold',
-    marginTop:5,
     color:'black',
-    marginLeft:10,
+    marginTop:-6,
+    marginLeft:8,
     marginRight:10,
     marginBottom:-8,
     fontSize : 17
   },
   textNote: {
-    margin: 10,
+    margin: 8,
+    marginBottom:-10,
     color : 'black'
   }
 });

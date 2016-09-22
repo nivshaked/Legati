@@ -10,10 +10,12 @@ import {
   Text,
   TouchableOpacity,
   Image,
+  Dimensions,
   View,
   InteractionManager
 } from 'react-native';
-
+var {height, width} = Dimensions.get('window');
+notebookwidth = (width-40)/3 ;
 
 class HomeNotebooks extends Component {
     constructor(props) { 
@@ -73,7 +75,7 @@ class HomeNotebooks extends Component {
             return ( 
                 <TouchableOpacity style={styles.notebook} activeOpacity={0.5} key={notebook.id} onLongPress={() => {this.notebookOnLongPressTest(notebook)}}
                    onPress={() => {this.props.openNotebook(notebook.id, notebook.name)}}>
-                <Image  source={require('../images/notebook.png')} style={{width:107, height:78}}>
+                <Image  source={require('../images/notebook.png')} style={{width:notebookwidth-4, height:78}}>
                 <Icon style={{position:'absolute',right:3.5, bottom:1, opacity : (this.state.selected === notebook.id) ? 1 : 0 }} name="check-circle" size={23} color="#4bd45b"/>
                   <View style={styles.backdropView}>
                     <Text style={styles.headline}>
@@ -86,7 +88,7 @@ class HomeNotebooks extends Component {
           })}
           
           <TouchableOpacity style={styles.notebook} activeOpacity={0.5} onPress={() => { this.props.addNotebook() }} >
-            <Image source={require('../images/notebook.png')} style={{ width:107, height:78}}>
+            <Image source={require('../images/notebook.png')} style={{width:notebookwidth-4, height:78}}>
               <View style={styles.backdropView}>
                 <Text style={styles.headline}>
                      <Icon name="add" size={50} color="black"/>
@@ -118,7 +120,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0)',
   },
   headline: {
-    fontSize: 22,
+    fontSize: 20,
     textAlign: 'center',
     backgroundColor: 'rgba(0,0,0,0)',
     color: 'black'
@@ -126,7 +128,7 @@ const styles = StyleSheet.create({
   notebook : {
     marginTop : 15, 
     marginLeft : 10,
-    width:109,
+    width: notebookwidth,
     height:81,
     borderColor : '#179fda',
     borderWidth : 1.7
